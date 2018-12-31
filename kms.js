@@ -1,5 +1,5 @@
 $(function() {
-  console.log("ver7");
+  console.log("ver8");
   // update favicon
   $('link[rel="icon"]').attr('href', 'https://i.ibb.co/5GgsZPF/favicon-bnsf.png'); 
   // check if creating live entry
