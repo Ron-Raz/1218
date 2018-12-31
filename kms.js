@@ -12,7 +12,7 @@ $(function() {
       // this is not a live entry. disable the sip field
       $sipField.hide();
     } else {
-      console.log("no live entry here"):
+      console.log("no live entry here");
   } else {
       console.log("sip field not here");
   }
