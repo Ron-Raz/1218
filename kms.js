@@ -1,7 +1,9 @@
 $(function() {
-  console.log("ver4");
+  console.log("ver5");
+  // update favicon
   $('link[rel="icon"]').attr('href', 'https://i.ibb.co/5GgsZPF/favicon-bnsf.png'); 
-  var $up=$("#uploadContainer");
-  console.log("up len",$up.length,$up);
+  // check if creating live entry
+  var $buttonEntrySubmit=$("#Entry-submit");
+  console.log($buttonEntrySubmit,$buttonEntrySubmit.length);
 });
 
