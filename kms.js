@@ -1,5 +1,5 @@
 $(function() {
-	console.log("ver13");
+	console.log("ver14 ",window.location.pathname,$("h1").text());
 	// update favicon
 	$('link[rel="icon"]').attr('href', 'https://i.ibb.co/5GgsZPF/favicon-bnsf.png'); 
 	// show SIP fields when creating entry
