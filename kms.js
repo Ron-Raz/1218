@@ -1,11 +1,36 @@
+function addCSSRule(sheet, selector, rules, index) {
+	// addCSSRule(document.styleSheets[0], "header", "float: left");
+	if("insertRule" in sheet) {
+		sheet.insertRule(selector + "{" + rules + "}", index);
+	}
+	else if("addRule" in sheet) {
+		sheet.addRule(selector, rules, index);
+	}
+}
+
+
 $(function() {
-	console.log("ver14 ",window.location.pathname,$("h1").text());
+	var wlp= window.location.pathname;
+	console.log("ver16 ", wlp);
+	/*
+	pathname		action
+	========		======
+	/upload/media		hide sip field (done in css)
+	/kwebcast/entry/add	show sip field
+	*/
 	// update favicon
 	$('link[rel="icon"]').attr('href', 'https://i.ibb.co/5GgsZPF/favicon-bnsf.png'); 
+	
 	// show SIP fields when creating entry
+	if( wlp === '/kwebcast/entry/add' ) {
+		console.log("don't hide sip field");
+	} else {
+		addCSSRule(document.styleSheets[0], "#customdata-SIP, #customdata-SIP+P, #customdata-SIP-label", "display: none");
+		console.log("rule added to hide sip field");
+	}
+	/*
 	$( "#Entry-name" ).on( "focus", function() {
-		console.log( "entry name focus. len=",$("#Entry-submit").length );
-		var $createEntry= $("#Entry-submit");
+		console.log( "entry name focus. Entry-submit=",$("#Entry-submit").length );
 		if( $("#Entry-submit") > 0 ) {
 			$("#customdata-SIP, #customdata-SIP+P, #customdata-SIP-label").show();
 			console.log("showing fields");
@@ -13,5 +38,6 @@ $(function() {
 			console.log("keeping fields hidden");
 		}
 	});
+	*/
 });
 
