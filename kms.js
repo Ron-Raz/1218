@@ -11,7 +11,7 @@ function addCSSRule(sheet, selector, rules, index) {
 
 $(function() {
 	var wlp= window.location.pathname;
-	console.log("ver17 ", wlp);
+	console.log("ver18", wlp);
 	/*
 	pathname		action
 	========		======
@@ -27,7 +27,7 @@ $(function() {
 		console.log("don't hide sip field");
 	} else {
 		
-		addCSSRule(document.styleSheets[0], "#customdata-SIP, #customdata-SIP+P, #customdata-SIP-label", "display: none");
+		addCSSRule(document.styleSheets[0], "#customdata-SIP, #customdata-SIP+P, #customdata-SIP-label, dt.customdata, dt.customdata+dd", "display: none");
 		console.log("rule added to hide sip field");
 	}
 	/*
