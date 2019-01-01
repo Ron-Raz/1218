@@ -1,21 +1,14 @@
 $(function() {
-	console.log("ver10");
+	console.log("ver11");
 	// update favicon
 	$('link[rel="icon"]').attr('href', 'https://i.ibb.co/5GgsZPF/favicon-bnsf.png'); 
-	// check if sip field on screen
-	var $sipField=$("#customdata-SIP");
-	if( $sipField.length > 0 ) {
-		// check if creating live entry
-		var $liveEntry=$("#Entry-submit");
-		if( $liveEntry.length === 0 ) {
-			console.log("hide sip field");
-			// this is not a live entry. disable the sip field
-			$sipField.hide();
-		} else {
-			console.log("no live entry here");
-		}
+	// show SIP fields when creating entry
+	var $createEntry= $("#Entry-submit");
+	if( $createEntry > 0 ) {
+		$("#customdata-SIP, #customdata-SIP+P, #customdata-SIP-label").show();
+		console.log("showing fields");
 	} else {
-	console.log("sip field not here");
+		console.log("keeping fields hidden");
 	}
 });
 
