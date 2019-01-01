@@ -1,3 +1,5 @@
-#customdata-SIP {
+#customdata-SIP,
+#customdata-SIP + P,
+#customdata-SIP-label {
 	display: none;
 }
