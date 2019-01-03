@@ -11,7 +11,7 @@ function addCSSRule(sheet, selector, rules, index) {
 
 $(function() {
 	var wlp= window.location.pathname;
-	console.log("ver21", wlp);
+	console.log("ver22", wlp);
 	/*
 	pathname		action
 	========		======
@@ -30,7 +30,7 @@ $(function() {
 		addCSSRule(document.styleSheets[0], "#customdata-SIP, #customdata-SIP+P, #customdata-SIP-label, #entry-metadata", "display: none");
 		console.log("rule added to hide sip field");
 		if( wlp === '/media/SIP/1_7y4l9qys' ) {
-			addCSSRule(document.styleSheets[0], "#wrapper, #mySidebar, #stats_wrap, #entryActions", "display: none");
+			addCSSRule(document.styleSheets[0], "#wrapper, #mySidebar, #stats_wrap, #entryActions", "display: none !important");
 		}
 	}
 	/*
