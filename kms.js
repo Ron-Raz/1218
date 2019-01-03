@@ -11,7 +11,7 @@ function addCSSRule(sheet, selector, rules, index) {
 
 $(function() {
 	var wlp= window.location.pathname;
-	console.log("ver22", wlp);
+	console.log("ver23", wlp);
 	/*
 	pathname		action
 	========		======
@@ -31,6 +31,7 @@ $(function() {
 		console.log("rule added to hide sip field");
 		if( wlp === '/media/SIP/1_7y4l9qys' ) {
 			addCSSRule(document.styleSheets[0], "#wrapper, #mySidebar, #stats_wrap, #entryActions", "display: none !important");
+			$("#wrapper, #mySidebar, #stats_wrap, #entryActions").detach();
 		}
 	}
 	/*
