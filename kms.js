@@ -11,12 +11,13 @@ function addCSSRule(sheet, selector, rules, index) {
 
 $(function() {
 	var wlp= window.location.pathname;
-	console.log("ver20", wlp);
+	console.log("ver21", wlp);
 	/*
 	pathname		action
 	========		======
 	/upload/media		hide sip field (done in css)
 	/kwebcast/entry/add	show sip field
+	/media/SIP/1_7y4l9qys	show sip server status
 	*/
 	// update favicon
 	$('link[rel="icon"]').attr('href', 'https://i.ibb.co/5GgsZPF/favicon-bnsf.png'); 
@@ -28,6 +29,9 @@ $(function() {
 	} else {
 		addCSSRule(document.styleSheets[0], "#customdata-SIP, #customdata-SIP+P, #customdata-SIP-label, #entry-metadata", "display: none");
 		console.log("rule added to hide sip field");
+		if( wlp === '/media/SIP/1_7y4l9qys' ) {
+			addCSSRule(document.styleSheets[0], "#wrapper, #mySidebar, #stats_wrap, #entryActions", "display: none");
+		}
 	}
 	/*
 	$( "#Entry-name" ).on( "focus", function() {
