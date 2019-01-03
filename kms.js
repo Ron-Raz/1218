@@ -11,7 +11,7 @@ function addCSSRule(sheet, selector, rules, index) {
 
 $(function() {
 	var wlp= window.location.pathname;
-	console.log("ver23", wlp);
+	console.log("ver24", wlp);
 	/*
 	pathname		action
 	========		======
@@ -27,11 +27,11 @@ $(function() {
 	if( wlp === '/kwebcast/entry/add' || ($("#KwebcastAdvancedOptions-tab").length > 0) ) {
 		console.log("don't hide sip field");
 	} else {
-		addCSSRule(document.styleSheets[0], "#customdata-SIP, #customdata-SIP+P, #customdata-SIP-label, #entry-metadata", "display: none");
+		addCSSRule(document.styleSheets[0], "#customdata-SIP, #customdata-SIP+P, #customdata-SIP-label, #entry-metadata", "display: none !important");
 		console.log("rule added to hide sip field");
 		if( wlp === '/media/SIP/1_7y4l9qys' ) {
-			addCSSRule(document.styleSheets[0], "#wrapper, #mySidebar, #stats_wrap, #entryActions", "display: none !important");
-			$("#wrapper, #mySidebar, #stats_wrap, #entryActions").detach();
+			addCSSRule(document.styleSheets[0], "#entryDataBlock", "width: 100% !important");
+			$("#wrapper, #mySidebar, #stats_wrap, #entryActions, #entry-nav").detach();
 		}
 	}
 	/*
